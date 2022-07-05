@@ -4,15 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="HW 05 - Form" />
+    <meta http-equiv="author" content="Soumya Thoutam" />
     <title>05 - Form</title>
-    <!-- <link rel="stylesheet" href="../styles.css" />
+    <!-- \<link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="../hw2/05-form.css" /> -->
   </head>
   <body>
     <main>
-      <form action="">
-        <h1>Contact Form</h1>
-        <!-- Add your code here -->
+      <form class="form" action="https://www.example.com" method="post">
+        <h1>Registration Form</h1>
+        <div class="form-element">
+          <label for="username">Username:</label>
+          <input type="text" name="username" id="username" />
+        </div>
+        <br>
+        <div class="form-element">
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <br>
+        <div class="form-element">
+          <label for="password">Password:</label>
+          <input type="password" name="password" id="password" />
+        </div>
+        <br>
+        <fieldset>
+          <legend>Would you like to sign up for the newsletter?</legend>
+          <section>
+            <div>
+              <input type="radio" name="signup" id="yes" />
+              <label for="yes">Yes, sign me up</label>
+              <input type="radio" name="signup" id="no" />
+              <label for="no">No, thank you</label>
+            </div>
+          </section>
+        </fieldset>
+        <br>
+        <div>
+          <label for="date">Date:</label>
+          <input type="date" name="date" id="date" />
+        </div>
+        <br>
+        <div>
+          <input type="submit" class="btn btn-primary" value="Submit" />
+          <input type="reset" class="btn btn-secondary" value="Reset" />
+        </div>
       </form>
     </main>
   </body>
