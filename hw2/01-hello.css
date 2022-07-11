@@ -4,3 +4,25 @@ If you would prefer, you can delete them and use your own classes and style defi
 .container {
   width: 50vw;
 }
+.main {
+  margin: auto;
+  text-align: center;
+}
+
+.figcaption {
+  text-align: left;
+  margin: auto;
+  width: 50%;
+}
+
+.figcaption::first-line {
+  font-weight: bold;
+}
+
+.img {
+  width: 299px;
+  height: 299px;
+  border-radius: 50%;
+}
+
+

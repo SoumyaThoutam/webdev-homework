@@ -5,12 +5,29 @@ body {
   margin: 0;
 }
 
+nav {
+  position: absolute;
+  top: -20px;
+  left: -40px;
+}
+
 .nav-list {
+  list-style: none;
 }
 
 .list-item {
   background-color: var(--green);
+  float: left;
 }
 
 .nav-link {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.nav-link:hover {
+  color: var(--black);
+  background-color: var(--orange);
 }
