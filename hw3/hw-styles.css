@@ -2,17 +2,137 @@ h1 {
   text-align: center;
 }
 
+.flex-container {
+  display: flex;
+}
 /* Code for exercise 01-flex */
 
+.flex-container-1 {
+  flex-flow: row wrap-reverse;
+  justify-content: flex-end;
+}
+
+.flex-container-1 .item4 {
+  order: -1;
+}
+
+.flex-container-1  .item7 {
+  order: -2;
+}
 /* Code for exercise 02-flex */
 
 .flex-container-2 {
   height: 400px;
+  flex-flow: column-reverse wrap;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
 }
 
 /* Code for exercise 03-grid */
 
+.grid-container-1 {
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 160px 80px 240px 160px;
+}
+
+.grid-container-1 .item7 {
+  grid-column: 1 / span 4;
+  grid-row-start: 1;
+}
+
+.grid-container-1 .item2 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.grid-container-1 .item6,
+.grid-container-1 .item8 {
+  grid-column-start: span 2;
+  grid-row-start: span 2;
+}
+
+
 /* Code for exercise 04-grid */
+
+.grid-container-2 .item1 {
+  grid-area: header;
+}
+
+.grid-container-2 .item2 {
+  grid-area: jumbotron;
+}
+
+.grid-container-2 .item3 {
+  grid-area: card1;
+}
+
+.grid-container-2 .item4 {
+  grid-area: card2;
+}
+
+.grid-container-2 .item5 {
+  grid-area: card3;
+  display: none;
+}
+
+.grid-container-2 .item6 {
+  grid-area: section;
+}
+
+.grid-container-2 .item7 {
+  grid-area: footer;
+}
+
+.grid-container-2 {
+  height: 89vh;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr repeat(2, 2fr) repeat(3, 1fr);
+  gap: 10px;
+  grid-template-areas: 
+    "header"
+    "jumbotron"
+    "section"
+    "card1"
+    "card2"
+    "footer";
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .grid-container-2 {
+    height: 89vh;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 1fr repeat(3, 2fr) 1fr;
+    gap: 10px;
+    grid-template-areas: 
+      "header header"
+      "jumbotron jumbotron"
+      "section section"
+      "card1 card2"
+      "footer footer";
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-container-2 {
+    height: 89vh;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr repeat(2, 2fr) 3fr 1fr;
+    gap: 10px;
+    grid-template-areas: 
+      "header header header"
+      "jumbotron jumbotron jumbotron"
+      "card1 card2 card3"
+      "section section section"
+      "footer footer footer";
+  }
+  .grid-container-2 .item5 {
+    display: inline-block;
+  }
+}
 
 /* Code for exercise 05-bootstrap-grid */
 
@@ -22,19 +142,19 @@ h1 {
   padding: 10px;
 }
 
-.bootstrap-grid .row:nth-child(1) > * {
+.bootstrap-grid .row:nth-child(2) > * {
   background-color: var(--purple);
 }
 
-.bootstrap-grid .row:nth-child(2) > * {
+.bootstrap-grid .row:nth-child(3) > * {
   background-color: var(--navy);
 }
 
-.bootstrap-grid .row:nth-child(3) > * {
+.bootstrap-grid .row:nth-child(4) > * {
   background-color: var(--teal);
 }
 
-.bootstrap-grid .row:nth-child(4) > * {
+.bootstrap-grid .row:nth-child(5) > * {
   background-color: var(--green);
 }
 
