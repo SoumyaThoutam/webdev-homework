@@ -1,5 +1,26 @@
+const monthText = 'month';
+const yearText = 'year';
 const calculateTime = (date1, date2) => {
   // Given two dates, calculate and return the amount of time elapsed in years and months
+  let start = new Date(date1);
+  let end = new Date(date2);
+  if (isNaN(start) || isNaN(end)) {
+    return 'Error: Invalid input provided.';
+  }
+  let year = start.getFullYear() - end.getFullYear();
+  let month = start.getMonth() - end.getMonth();
+  if (year === 0) return 'Time elapsed: ' + textByNumber(month, monthText);
+  return(
+    'Time elapsed: ' +
+    textByNumber(year, yearText) +
+    ', ' +
+    textByNumber(month, monthText)
+  );
+};
+
+const textByNumber = (value, text) => {
+  let suffix = value > 1 ? text + 's' : text;
+  return value + ' ' + suffix;
 };
 
 // Date() formats:
